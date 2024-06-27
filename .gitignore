@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+index_servicenow_storage/
+servicenow_data/
+.vscode/
+.env
+kb_articles.csv
+last_run.txt
+testDriver.py
+text.txt
