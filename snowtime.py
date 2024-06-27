@@ -50,7 +50,11 @@ def fetch_new_kb_articles():
         if articles:
             with open('kb_articles.csv', 'a', newline='') as csvfile:
                 fieldnames = ['number', 'short_description', 'sys_created_on','text']
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                writer = csv.DictWriter(csvfile,  fieldnames=fieldnames)
+                
+                # Check if the file is empty, if so, write the header
+                if csvfile.tell() == 0:
+                    writer.writeheader()
 
                 for article in articles:
                     writer.writerow({
